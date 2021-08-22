@@ -6,6 +6,7 @@ namespace UserRegistrationMSTest
     {
         static void Main(string[] args)
         {
+            //Welcome Message
             Console.WriteLine("Welcome To User Registration Test With MS Test");
         }
     }
