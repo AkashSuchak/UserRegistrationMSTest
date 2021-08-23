@@ -78,7 +78,7 @@ namespace UserRegistrationMSTestCases
         [DataRow("suchak.akash@gmail.com")]
         public void GivenEmail_CheckIfValid(string email)
         {
-            //Arrange
+            //Arrange 
             Validation validation = new Validation();
 
             //Act
@@ -97,6 +97,37 @@ namespace UserRegistrationMSTestCases
 
             //Act
             bool result = validation.Email(email);
+
+            //Assert
+            Assert.IsFalse(result);
+        }
+        /// <summary>
+        /// Check Mobile
+        /// </summary>
+        /// <param name="mobile"></param>
+        [TestMethod]
+        [DataRow("91 9099096400")]
+        public void GivenMobile_CheckIfValid(string mobile)
+        {
+            //Arrange
+            Validation validation = new Validation();
+
+            //Act
+            bool result = validation.Mobile(mobile);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("9099096400")]
+        public void GivenMobile_CheckIfNotValid(string mobile)
+        {
+            //Arrange
+            Validation validation = new Validation();
+
+            //Act
+            bool result = validation.Mobile(mobile);
 
             //Assert
             Assert.IsFalse(result);
