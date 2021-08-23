@@ -8,10 +8,7 @@ namespace UserRegistrationMSTest
         {
             //Welcome Message
             Console.WriteLine("Welcome To User Registration Test With MS Test");
-            Console.WriteLine("==============================================");
-            
-            //Validation validation = new Validation();
-            //validation.FirstAndLastName();
+            Console.WriteLine("==============================================");                        
         }
     }
 }
