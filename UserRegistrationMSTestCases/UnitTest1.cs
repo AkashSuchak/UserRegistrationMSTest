@@ -133,12 +133,12 @@ namespace UserRegistrationMSTestCases
             Assert.IsFalse(result);
         }
         /// <summary>
-        /// Check Password has Minimum 8 characters, 1UpperCase
+        /// Check Password has Minimum 8 characters, 1UpperCase, 1 Special CHaracter
         /// </summary>
         /// <param name="password"></param>
         [TestMethod]
-        [DataRow("aHegd9tyeklci")]
-        public void GivenPassword_Min8Chars_1UpperCase_CheckIfValid(string password)
+        [DataRow("aHegd9ty#eklci")]
+        public void GivenPassword_Min8Chars_1UpperCase_Exact1SpecialChar_CheckIfValid(string password)
         {
             //Arrange
             Validation validation = new Validation();
@@ -151,8 +151,8 @@ namespace UserRegistrationMSTestCases
         }
 
         [TestMethod]
-        [DataRow("SAbsDkfdfdfej")]
-        public void GivenPassword_Min8Chars_1UpperCase_CheckIfNotValid(string password)
+        [DataRow("SAbs#Dkfdfd&fej")]
+        public void GivenPassword_Min8Chars_1UpperCase_Exact1SpecialChar_CheckIfNotValid(string password)
         {
             //Arrange
             Validation validation = new Validation();
