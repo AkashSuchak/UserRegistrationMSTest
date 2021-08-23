@@ -137,7 +137,7 @@ namespace UserRegistrationMSTestCases
         /// </summary>
         /// <param name="password"></param>
         [TestMethod]
-        [DataRow("aHegdtyeklci")]
+        [DataRow("aHegd9tyeklci")]
         public void GivenPassword_Min8Chars_1UpperCase_CheckIfValid(string password)
         {
             //Arrange
@@ -151,7 +151,7 @@ namespace UserRegistrationMSTestCases
         }
 
         [TestMethod]
-        [DataRow("Abskj")]
+        [DataRow("SAbsDkfdfdfej")]
         public void GivenPassword_Min8Chars_1UpperCase_CheckIfNotValid(string password)
         {
             //Arrange
