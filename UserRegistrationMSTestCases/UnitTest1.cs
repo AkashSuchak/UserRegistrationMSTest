@@ -69,5 +69,37 @@ namespace UserRegistrationMSTestCases
             //Assert
             Assert.IsFalse(result);
         }
+
+        /// <summary>
+        /// Check Email - ID
+        /// </summary>
+        /// <param name="email"></param>
+        [TestMethod]
+        [DataRow("suchak.akash@gmail.com")]
+        public void GivenEmail_CheckIfValid(string email)
+        {
+            //Arrange
+            Validation validation = new Validation();
+
+            //Act
+            bool result = validation.Email(email);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("suchak@akash@gmail.com")]
+        public void GivenEmail_CheckIfNotValid(string email)
+        {
+            //Arrange
+            Validation validation = new Validation();
+
+            //Act
+            bool result = validation.Email(email);
+
+            //Assert
+            Assert.IsFalse(result);
+        }
     }
 }
