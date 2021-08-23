@@ -132,5 +132,36 @@ namespace UserRegistrationMSTestCases
             //Assert
             Assert.IsFalse(result);
         }
+        /// <summary>
+        /// Check Password has Minimum 8 characters
+        /// </summary>
+        /// <param name="password"></param>
+        [TestMethod]
+        [DataRow("ahegdtyeklcI")]
+        public void GivenPassword_Min8Chars_CheckIfValid(string password)
+        {
+            //Arrange
+            Validation validation = new Validation();
+
+            //Act
+            bool result = validation.Password(password);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("Abskj")]
+        public void GivenPassword_Min8Chars_CheckIfNotValid(string password)
+        {
+            //Arrange
+            Validation validation = new Validation();
+
+            //Act
+            bool result = validation.Password(password);
+
+            //Assert
+            Assert.IsFalse(result);
+        }
     }
 }
